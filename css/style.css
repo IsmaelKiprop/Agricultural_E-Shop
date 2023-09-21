@@ -56,8 +56,13 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  text-align: left;
-  background-color: #fff; }
+  text-align: center;
+  background-color: #000;
+  background-image: url('images/agri_product_1.png');
+  background-size: cover; /* Cover the entire viewport */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  background-attachment: fixed; /* Fixed background position */
+  padding-top: 100px; }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }

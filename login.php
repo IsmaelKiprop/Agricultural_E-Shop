@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Redirect based on user role
                 if ($user_role == 'admin') {
-                    header("Location: admin_dashboard.php"); // Redirect admin to the admin dashboard
+                    header("Location: admin.php"); // Redirect admin to the admin dashboard
                 } else {
                     header("Location: index.php"); // Redirect users to the index page
                 }
@@ -78,54 +78,40 @@ function test_input($data)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <!-- Include your CSS styles here -->
-</head>
-<body>
-    <!-- Login Form -->
-    <h2>Login</h2>
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <!-- Username -->
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" value="<?php echo $username; ?>">
-        <span class="error"><?php echo $username_err; ?></span><br>
-
-        <!-- Password -->
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" value="<?php echo $password; ?>">
-        <span class="error"><?php echo $password_err; ?></span><br>
-
-        <!-- Submit Button -->
-        <input type="submit" value="Login">
-    </form>
-
-    <!-- Registration Link -->
-    <p>Don't have an account? <a href="register.php">Register here</a></p>
-
-    <!-- Include your JavaScript and other scripts here -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-image: url('images/agri_product_1.png'); /* Update the path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             text-align: center;
             padding-top: 100px;
+            margin: 0;
         }
 
-        h2 {
-            color: #333;
-        }
-
-        form {
-            background-color: #fff;
-            border: 1px solid #ccc;
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
             padding: 20px;
             max-width: 300px;
             margin: 0 auto;
-            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
 
-        label {
+        .login-form h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: #333;
         }
 
@@ -133,24 +119,58 @@ function test_input($data)
         input[type="password"] {
             width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
 
-        input[type="submit"] {
+        .btn-login {
             background-color: #009688;
             color: #fff;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
             cursor: pointer;
+            font-weight: bold;
         }
 
-        input[type="submit"]:hover {
+        .btn-login:hover {
             background-color: #007b6b;
         }
+
+        .registration-link {
+            text-decoration: none;
+            color: #009688;
+        }
+
+        .registration-link:hover {
+            text-decoration: underline;
+        }
     </style>
+</head>
+<body>
+    <div class="container">
+        <form class="login-form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <h2>Login</h2>
+            <!-- Username -->
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" value="<?php echo $username; ?>">
+                <span class="error"><?php echo $username_err; ?></span>
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" value="<?php echo $password; ?>">
+                <span class="error"><?php echo $password_err; ?></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+
+        <!-- Registration Link -->
+        <p>Don't have an account? <a href="register.php" class="registration-link">Register here</a></p>
+    </div>
 </body>
 </html>
-

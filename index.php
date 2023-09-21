@@ -81,6 +81,9 @@ include("auth.php");
 	          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+                <div class="logout-link">
+                    <a href="logout.php">Log Out</a>
+                </div>
 
 	        </ul>
 	      </div>

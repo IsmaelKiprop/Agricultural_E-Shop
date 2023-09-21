@@ -89,129 +89,174 @@ function test_input($data)
     return $data;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <!-- Include your CSS styles here -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- Registration Form -->
-    <h2>Registration</h2>
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <!-- Username -->
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" value="<?php echo $username; ?>">
-        <span class="error"><?php echo $username_err; ?></span><br>
-
-        <!-- Email -->
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email" value="<?php echo $email; ?>">
-        <span class="error"><?php echo $email_err; ?></span><br>
-
-        <!-- Password -->
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" value="<?php echo $password; ?>">
-        <span class="error"><?php echo $password_err; ?></span><br>
-
-        <!-- First Name -->
-        <label for="first_name">First Name:</label>
-        <input type="text" name="first_name" id="first_name" value="<?php echo $first_name; ?>"><br>
-
-        <!-- Last Name -->
-        <label for="last_name">Last Name:</label>
-        <input type="text" name="last_name" id="last_name" value="<?php echo $last_name; ?>"><br>
-
-        <!-- Address -->
-        <label for="address">Address:</label>
-        <input type="text" name="address" id="address" value="<?php echo $address; ?>"><br>
-
-        <!-- City -->
-        <label for="city">City:</label>
-        <input type="text" name="city" id="city" value="<?php echo $city; ?>"><br>
-
-        <!-- State -->
-        <label for="state">State:</label>
-        <input type="text" name="state" id="state" value="<?php echo $state; ?>"><br>
-
-        <!-- Zip Code -->
-        <label for="zip_code">Zip Code:</label>
-        <input type="text" name="zip_code" id="zip_code" value="<?php echo $zip_code; ?>"><br>
-
-        <!-- Country -->
-        <label for="country">Country:</label>
-        <input type="text" name="country" id="country" value="<?php echo $country; ?>"><br>
-
-        <!-- Phone Number -->
-        <label for="phone_number">Phone Number:</label>
-        <input type="text" name="phone_number" id="phone_number" value="<?php echo $phone_number; ?>"><br>
-
-        <!-- Role Selection -->
-        <label for="role">Select Role:</label>
-        <select name="role" id="role">
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-        </select>
-        <span class="error"><?php echo $role_err; ?></span><br>
-
-        <!-- Submit Button -->
-        <input type="submit" value="Register">
-    </form>
-
-    <!-- Include your JavaScript if needed -->
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-image: url('images/agri\ product_5.png'); /* Update the path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             text-align: center;
             padding-top: 100px;
+            margin: 0;
         }
 
-        h2 {
-            color: #333;
-        }
-
-        form {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
 
-        label {
+        .registration-form h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: #333;
         }
 
         input[type="text"],
-        input[type="password"] {
+        input[type="password"],
+        select {
             width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
 
-        input[type="submit"] {
+        .btn-register {
             background-color: #009688;
             color: #fff;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
             cursor: pointer;
+            font-weight: bold;
         }
 
-        input[type="submit"]:hover {
+        .btn-register:hover {
             background-color: #007b6b;
         }
+
+        .login-link {
+            text-decoration: none;
+            color: #009688;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
     </style>
+</head>
+<body>
+    <div class="container">
+        <form class="registration-form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <h2>Registration</h2>
+            <!-- Username -->
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" value="<?php echo $username; ?>">
+                <span class="error"><?php echo $username_err; ?></span>
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" value="<?php echo $email; ?>">
+                <span class="error"><?php echo $email_err; ?></span>
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" value="<?php echo $password; ?>">
+                <span class="error"><?php echo $password_err; ?></span>
+            </div>
+
+            <!-- First Name -->
+            <div class="input-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" id="first_name" value="<?php echo $first_name; ?>">
+            </div>
+
+            <!-- Last Name -->
+            <div class="input-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" id="last_name" value="<?php echo $last_name; ?>">
+            </div>
+
+            <!-- Address -->
+            <div class="input-group">
+                <label for="address">Address:</label>
+                <input type="text" name="address" id="address" value="<?php echo $address; ?>">
+            </div>
+
+            <!-- City -->
+            <div class="input-group">
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city" value="<?php echo $city; ?>">
+            </div>
+
+            <!-- State -->
+            <div class="input-group">
+                <label for="state">State:</label>
+                <input type="text" name="state" id="state" value="<?php echo $state; ?>">
+            </div>
+
+            <!-- Zip Code -->
+            <div class="input-group">
+                <label for="zip_code">Zip Code:</label>
+                <input type="text" name="zip_code" id="zip_code" value="<?php echo $zip_code; ?>">
+            </div>
+
+            <!-- Country -->
+            <div class="input-group">
+                <label for="country">Country:</label>
+                <input type="text" name="country" id="country" value="<?php echo $country; ?>">
+            </div>
+
+            <!-- Phone Number -->
+            <div class="input-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="text" name="phone_number" id="phone_number" value="<?php echo $phone_number; ?>">
+            </div>
+
+            <!-- Role Selection -->
+            <div class="input-group">
+                <label for="role">Select Role:</label>
+                <select name="role" id="role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <span class="error"><?php echo $role_err; ?></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-register">Register</button>
+        </form>
+
+        <!-- Login Link -->
+        <p>Already have an account? <a href="login.php" class="login-link">Login here</a></p>
+    </div>
 </body>
 </html>
+
+
 
