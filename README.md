@@ -2,8 +2,7 @@
 
 Welcome to the Agricultural E-Shop project! This is an e-commerce platform tailored for agricultural products, designed to make it easier for farmers and customers to buy and sell agricultural goods.
 
-![Agricultural E-Shop Logo](<img width="945" alt="image" src="https://github.com/IsmaelKiprop/Agricultural_E-Shop/assets/133222922/4dc58303-62d3-4f95-9c95-086102968e59">
-)
+<img width="945" alt="image" src="https://github.com/IsmaelKiprop/Agricultural_E-Shop/assets/133222922/4dc58303-62d3-4f95-9c95-086102968e59">
 
 ## Table of Contents
 
