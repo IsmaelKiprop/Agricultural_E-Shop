@@ -94,7 +94,7 @@ function test_input($data)
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
             padding: 20px;
-            max-width: 300px;
+            max-width: 600px;
             margin: 0 auto;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }

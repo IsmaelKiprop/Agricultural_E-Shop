@@ -24,7 +24,7 @@ $result = $conn->query($sql);
                             <h2><?php echo $row['name']; ?></h2>
                             <p><?php echo $row['description']; ?></p>
                             <span class="price">$<?php echo $row['price']; ?></span>
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                            <a href="cart.php" class="btn btn-primary">Add to Cart</a>
                         </div>
                     </div>
             <?php
